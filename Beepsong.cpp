@@ -9,13 +9,17 @@
 
 using namespace std;
 
+
 int main() {
+    
     char note;
     int time;
 
-    Boop boop;
+    parse("Score.txt");
+    
+    cout << endl<< endl << "Boop di Boop " << endl << endl;
 
-    boop.Playnote(note,time);
+    system ("pause");
 
     return 0;
 

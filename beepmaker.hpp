@@ -8,10 +8,7 @@
 
 using namespace std;
 
-
-class Boop {
-    public:
-        bool Playnote (char note, int time);
-};
+bool Playnote (char note, int time);
+void parse (string filename);
 
 #endif

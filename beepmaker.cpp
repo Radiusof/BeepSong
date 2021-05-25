@@ -7,64 +7,86 @@ using namespace std;
 
 DWORD dwFreq, dwDuration;
 
-bool Boop::Playnote (char note, int time){
-
-     cout << "Veuillez entrer une note: A/B/C/D/E/F/G ou W " << endl;
-    cin >> note;
-
- 
+bool Playnote (char note, int time){
+   
     switch (note){
         case 'A': case 'a':
-            cout << "Note A choisie : " << endl;
+            cout << endl << "A" << endl;
             dwFreq = 2750;
             break;
 
         case 'B': case 'b' :
-            cout << "Note B choisie : " << endl;
+            cout << endl <<  "B" << endl;
             dwFreq = 3087;
             break;
 
         case 'C': case 'c' :
-            cout << "Note C choisie : " << endl;
+            cout << endl <<  "C" << endl;
             dwFreq = 1637;
             break;
 
         case 'D': case 'd' :
-            cout << "Note D choisie : " << endl;
+            cout << endl <<  "D" << endl;
             dwFreq = 1835;
             break;
 
         case 'E': case 'e' :
-            cout << "Note E choisie : " << endl;
+            cout << endl <<  "E" << endl;
             dwFreq = 2060;
             break;
 
         case 'F' : case 'f' :
-            cout << "Note F choisie : " << endl;
+            cout << endl <<  "F" << endl;
             dwFreq = 2183;
             break;
 
         case 'G' : case 'g' :
-            cout << "Note G choisie : " << endl;
+            cout << endl <<  "G" << endl;
             dwFreq = 2450;
             break;
 
         case 'W' : case 'w' :
-            cout << "Break choisie : " << endl;
-            dwFreq = 0;
+            cout << endl <<  "Break" << endl;
             break;
 
         default :
-            cout << "Saisie incorrecte"<< endl;
+            cout << endl <<  "Saisie incorrecte"<< endl;
             return false;    
     }
-    cout << " Maintenant, entrer une duree (en ms): " << endl;
-    cin >> time;
 
-    cout << "Frequence: " << dwFreq << " Hz."<< " Duree: "<< time <<" Ms." << endl;
+    if(note == 'W' || note == 'w'){
+        Sleep (time);
+        return true;
+    }else{
+        Beep (dwFreq,time);
+        return true; 
+    }
+     
+}
 
-    Beep(dwFreq,time);
+void parse (string filename){
+    //string filename = "Score.txt";
+    ifstream input;
 
-    cout << " Boop di Boop " << endl;
-    return true;
+    input.open(filename);
+    if (!input.is_open()){
+        cerr;
+    }
+
+    while (input){
+        char note;
+        input >> note;
+        int time;
+        input >> time;
+
+        
+        if (!input){
+            break;
+        }
+
+        cout << Playnote(note,time) << endl;
+
+    }
+    
+    input.close();
 }
