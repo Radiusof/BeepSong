@@ -10,8 +10,9 @@
 using namespace std;
 
 
-int main() {
+int main(int argc, char* argv[]) {
     
+   
     char note;
     int time;
 
@@ -21,6 +22,7 @@ int main() {
 
     system ("pause");
 
+   
     return 0;
 
 }

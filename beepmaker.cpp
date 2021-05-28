@@ -12,37 +12,37 @@ bool Playnote (char note, int time){
     switch (note){
         case 'A': case 'a':
             cout << endl << "A" << endl;
-            dwFreq = 2750;
+            Beep (2750, time);
             break;
 
         case 'B': case 'b' :
             cout << endl <<  "B" << endl;
-            dwFreq = 3087;
+            Beep(3087,time);
             break;
 
         case 'C': case 'c' :
             cout << endl <<  "C" << endl;
-            dwFreq = 1637;
+            Beep(1637,time);
             break;
 
         case 'D': case 'd' :
             cout << endl <<  "D" << endl;
-            dwFreq = 1835;
+            Beep (1835,time);
             break;
 
         case 'E': case 'e' :
             cout << endl <<  "E" << endl;
-            dwFreq = 2060;
+            Beep (2060,time);
             break;
 
         case 'F' : case 'f' :
             cout << endl <<  "F" << endl;
-            dwFreq = 2183;
+            Beep (2183,time);
             break;
 
         case 'G' : case 'g' :
             cout << endl <<  "G" << endl;
-            dwFreq = 2450;
+           Beep(2450,time);
             break;
 
         case 'W' : case 'w' :
@@ -58,7 +58,6 @@ bool Playnote (char note, int time){
         Sleep (time);
         return true;
     }else{
-        Beep (dwFreq,time);
         return true; 
     }
      
@@ -70,7 +69,7 @@ void parse (string filename){
 
     input.open(filename);
     if (!input.is_open()){
-        cerr;
+        cerr << "Ouverture de fichier impossible!"<<endl;
     }
 
     while (input){
@@ -84,7 +83,7 @@ void parse (string filename){
             break;
         }
 
-        cout << Playnote(note,time) << endl;
+        Playnote(note,time) ;
 
     }
     
