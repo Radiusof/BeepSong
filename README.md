@@ -1,14 +1,19 @@
 🎶 BeepSong
-BeepSong is a C++ application that allows users to generate sound using the internal speaker of their computer. It parses a text file containing musical notes and durations, and plays them sequentially through the speaker.
+
+BeepSong is a C++ application that allows users to generate sound using the internal speaker of their computer.
+It parses a text file containing musical notes and durations, and plays them sequentially through the speaker.
 
 ✨ Features
-🎼 Parse a text file with musical notes and their durations.
-🔊 Play the notes using the computer's internal speaker.
-🎵 Supports basic musical notes like C, D, E, F, G, A, B, along with custom durations in milliseconds.
+
+- 🎼 Parse a text file with musical notes and their durations.
+- 🔊 Play the notes using the computer's internal speaker.
+- 🎵 Supports basic musical notes like C, D, E, F, G, A, B, along with custom durations in milliseconds.
+  
 🛠️ How It Works
-📄 The user provides a text file with a specific format where each line contains a note and its duration.
-🔍 BeepSong reads the file and processes the notes.
-🎶 The software generates sound through the internal speaker using the system's Beep() function (on Windows).
+
+- 📄 The user provides a text file with a specific format where each line contains a note and its duration.
+- 🔍 BeepSong reads the file and processes the notes.
+- 🎶 The software generates sound through the internal speaker using the system's Beep() function (on Windows).
 
 Example Input
 A sample file named song.txt could contain the following:
